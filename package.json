@@ -1,0 +1,25 @@
+{
+  "name": "rpncalculator",
+  "version": "1.0.0",
+  "description": "RPN Calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piotrbartnik/RPNcalculator.git"
+  },
+  "keywords": [
+    "RPN",
+    "reverse",
+    "polish",
+    "notation"
+  ],
+  "author": "Piotr Bartnik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piotrbartnik/RPNcalculator/issues"
+  },
+  "homepage": "https://github.com/piotrbartnik/RPNcalculator#readme"
+}
