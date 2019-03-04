@@ -4,7 +4,7 @@
   "description": "RPN Calculator",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "gulp-image": "^4.4.1",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
+    "jest": "^24.1.0",
     "node-sass": "^4.11.0"
   },
   "dependencies": {

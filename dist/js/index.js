@@ -1,1 +1,1 @@
-"use strict";
+"use strict";function sum(u,t){return u+t}function multiply(u,t){return u*t}module.exports={sum:sum,multiply:multiply};
