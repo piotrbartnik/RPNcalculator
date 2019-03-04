@@ -27,10 +27,13 @@
     "@babel/preset-env": "^7.3.4",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
-    "gulp-concat": "^2.6.1",
     "gulp-image": "^4.4.1",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "node-sass": "^4.11.0"
+  },
+  "dependencies": {
+    "gulp-uglifycss": "^1.1.0",
+    "npm-sass": "^2.3.0"
   }
 }
