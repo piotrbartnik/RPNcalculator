@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+.main {
+  background-color: red; }
+
+.not__main {
+  background-color: green; }
