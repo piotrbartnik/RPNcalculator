@@ -19,7 +19,22 @@ body {
   width: 325px;
   background-color: #ffffff;
   box-shadow: 10px 10px 39px 0px rgba(0, 0, 0, 0.75);
-  border-radius: 5px; }
+  border-radius: 5px;
+  padding: 10px; }
 
 .calc__head {
-  background-color: #422819; }
+  background-color: #422819;
+  width: 315px;
+  height: 200px;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap; }
+  .calc__head--solar {
+    background-color: #4e3227;
+    border: 0.5px solid #53443d;
+    width: 62px;
+    height: 62px; }
+  .calc__head--display {
+    background-color: #767a69;
+    width: 615px;
+    height: 80px; }
