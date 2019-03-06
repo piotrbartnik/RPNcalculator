@@ -54,9 +54,11 @@ body {
 
     &--solarcontainer {
       @include flex;
-      padding-bottom: 20px;
+      justify-content: center;
+      width: 100%;
       padding-bottom: 5px;
       border-bottom: 2.5px dashed #9e4a26;
+      margin-bottom: 10px;
     }
 
     &--solar {
