@@ -1,11 +1,14 @@
 @font-face{font-family:'Digital7';src:url(../fonts/digital-7.ttf) format("truetype")}
 @font-face{font-family:'Android';src:url(../fonts/Android_101.ttf) format("truetype")}
 body{margin:0;padding:0;font-family:"Digital7";background:linear-gradient(to right,#808080,#3fada8)}
-.container{display:flex;justify-content:center;align-items:center;height:100vh}.calc__body{height:500px;width:325px;background-color:#fff;box-shadow:10px 10px 39px 0 rgba(0,0,0,0.75);border-radius:5px;padding:10px}
+p{padding:0;margin:0}.container{display:flex;justify-content:center;align-items:center;height:100vh}
+.calc__body{height:500px;width:325px;background-color:#fff;box-shadow:10px 10px 39px 0 rgba(0,0,0,0.75);border-radius:5px;padding:10px}
 .calc__head{background-color:#422819;width:315px;height:235px;padding:5px;display:flex;flex-wrap:wrap;justify-content:center}
 .calc__head--inner{background-color:#252115;display:flex;flex-wrap:wrap;width:295px;justify-content:center;margin:12px 0}
 .calc__head--solarcontainer{display:flex;flex-wrap:wrap;justify-content:center;width:100%;padding-bottom:5px;border-bottom:2.5px dashed #9e4a26;margin-bottom:10px}
 .calc__head--solar{background-color:#4e3227;border:.5px solid #53443d;width:56px;height:56px;margin-top:4px}
 .calc__head--display{background-color:#767a69;width:245px;height:50px;border-radius:10px;display:flex;justify-content:flex-end;align-items:flex-end;padding:20px;box-sizing:border-box;font-size:40px}
-.calc__pad{width:325px;height:200px;display:flex;flex-wrap:wrap;justify-content:space-evenly;background-color:#c1bbaf;box-sizing:border-box;padding:5px}
-.calc__button{display:flex;flex-wrap:wrap;justify-content:center;align-content:center;width:53px;height:30px;background-color:black;border-radius:4px;font-family:"Android";color:#fff;font-size:20px}
+.calc__pad{width:325px;height:200px;display:flex;flex-wrap:wrap;justify-content:space-evenly;background-color:#c1bbaf;box-sizing:border-box;padding:5px;margin-top:55px}
+.calc__pad--solarcell{display:flex;flex-wrap:wrap;margin-right:auto;font-family:"Android";padding-left:10px;font-size:15px}
+.calc__button{display:flex;flex-wrap:wrap;justify-content:center;align-content:center;width:45px;height:25px;border:4px solid #000;background-color:#313632;border-radius:4px;font-family:"Android";color:#fff;font-size:20px;cursor:pointer}
+.calc__button:hover{background-color:#6d726e;transition:.3s ease-in-out}.solarcell__img{width:15px;height:15px}
