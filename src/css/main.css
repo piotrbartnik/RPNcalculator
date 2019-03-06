@@ -25,16 +25,38 @@ body {
 .calc__head {
   background-color: #422819;
   width: 315px;
-  height: 200px;
+  height: 235px;
   padding: 5px;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: center; }
+  .calc__head--inner {
+    background-color: #252115;
+    display: flex;
+    flex-wrap: wrap;
+    width: 295px;
+    justify-content: center;
+    margin: 12px 0; }
+  .calc__head--solarcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2.5px dashed #9e4a26; }
   .calc__head--solar {
     background-color: #4e3227;
     border: 0.5px solid #53443d;
-    width: 62px;
-    height: 62px; }
+    width: 56px;
+    height: 56px;
+    margin-top: 4px; }
   .calc__head--display {
     background-color: #767a69;
-    width: 615px;
-    height: 80px; }
+    width: 245px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 40px; }
