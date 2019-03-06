@@ -82,4 +82,18 @@ body {
       font-size: 40px;
     }
   }
+
+  &__pad {
+    width: 325px;
+    height: 200px;
+    @include flex;
+    justify-content: space-evenly;
+    background-color: #c1bbaf;
+  }
+
+  &__button {
+    width: 55px;
+    height: 30px;
+    background-color: black;
+  }
 }

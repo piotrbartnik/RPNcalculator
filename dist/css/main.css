@@ -6,3 +6,5 @@ body{margin:0;padding:0;font-family:"Digital7";background:linear-gradient(to rig
 .calc__head--solarcontainer{display:flex;flex-wrap:wrap;justify-content:center;width:100%;padding-bottom:5px;border-bottom:2.5px dashed #9e4a26;margin-bottom:10px}
 .calc__head--solar{background-color:#4e3227;border:.5px solid #53443d;width:56px;height:56px;margin-top:4px}
 .calc__head--display{background-color:#767a69;width:245px;height:50px;border-radius:10px;display:flex;justify-content:flex-end;align-items:flex-end;padding:20px;box-sizing:border-box;font-size:40px}
+.calc__pad{width:325px;height:200px;display:flex;flex-wrap:wrap;justify-content:space-evenly;background-color:#c1bbaf}
+.calc__button{width:55px;height:30px;background-color:black}

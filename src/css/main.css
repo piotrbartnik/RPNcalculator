@@ -62,3 +62,16 @@ body {
     padding: 20px;
     box-sizing: border-box;
     font-size: 40px; }
+
+.calc__pad {
+  width: 325px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #c1bbaf; }
+
+.calc__button {
+  width: 55px;
+  height: 30px;
+  background-color: black; }
