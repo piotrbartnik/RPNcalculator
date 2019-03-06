@@ -3,7 +3,13 @@
   src: url(../fonts/digital-7.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Android';
+  src: url(../fonts/Android_101.ttf) format('truetype');
+}
+
 $font-calc: 'Digital7';
+$font-android: 'Android';
 
 @mixin flex {
   display: flex;
@@ -89,11 +95,20 @@ body {
     @include flex;
     justify-content: space-evenly;
     background-color: #c1bbaf;
+    box-sizing: border-box;
+    padding: 5px;
   }
 
   &__button {
-    width: 55px;
+    @include flex;
+    justify-content: center;
+    align-content: center;
+    width: 53px;
     height: 30px;
     background-color: black;
+    border-radius: 4px;
+    font-family: $font-android;
+    color: #ffffff;
+    font-size: 20px;
   }
 }

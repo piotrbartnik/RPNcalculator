@@ -2,6 +2,10 @@
   font-family: 'Digital7';
   src: url(../fonts/digital-7.ttf) format("truetype"); }
 
+@font-face {
+  font-family: 'Android';
+  src: url(../fonts/Android_101.ttf) format("truetype"); }
+
 body {
   margin: 0;
   padding: 0;
@@ -69,9 +73,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: #c1bbaf; }
+  background-color: #c1bbaf;
+  box-sizing: border-box;
+  padding: 5px; }
 
 .calc__button {
-  width: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: 53px;
   height: 30px;
-  background-color: black; }
+  background-color: black;
+  border-radius: 4px;
+  font-family: "Android";
+  color: #ffffff;
+  font-size: 20px; }
