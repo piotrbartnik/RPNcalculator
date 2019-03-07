@@ -1,14 +1,4 @@
 "use strict";
 
-function sum(a, b) {
-  return a + b;
-}
-
-function multiply(c, d) {
-  return c * d;
-}
-
-module.exports = {
-  sum: sum,
-  multiply: multiply
-};
+var buttons = document.querySelectorAll('.calc__button');
+console.log(buttons);
