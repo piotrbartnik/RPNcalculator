@@ -8,6 +8,10 @@ for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function (j) {
     return function () {
       resultDisplay.innerText += '' + buttons[j].innerText;
+
+      if (buttons[j].innerText == 'C') {
+        resultDisplay.innerText = '';
+      }
     };
   }(i));
 }
