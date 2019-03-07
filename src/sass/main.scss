@@ -8,8 +8,16 @@
   src: url(../fonts/Android_101.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'OEG';
+  src: url(../fonts/OPTIEdgarBold-Extended.otf) format('truetype');
+}
+
+
+
 $font-calc: 'Digital7';
 $font-android: 'Android';
+$font-oeg: 'OEG';
 
 @mixin flex {
   display: flex;
@@ -99,12 +107,24 @@ p {
     align-items: center;
     background-color: #bc551a;
     height: 30px;
+    box-sizing: border-box;
+    padding: 0 15px;
+    color: white;
+    font-family: "OEG";
+    justify-content: space-between;
 
+    &--type {
+      font-size: 5px;
+
+      &:nth-of-type(1) {
+        color: black;
+      }
+    }
   }
 
   &__pad {
     width: 325px;
-    height: 220px;
+    height: 230px;
     @include flex;
     justify-content: flex-start;
     background-color: #c1bbaf;
@@ -123,6 +143,7 @@ p {
       justify-content: space-evenly;
       width: 325px;
       padding: 5px;
+      
     }
 
     &--solarcell {
@@ -148,6 +169,7 @@ p {
     color: #ffffff;
     font-size: 20px;
     cursor: pointer;
+    margin: 3px;
 
     &:hover {
       background-color: #6d726e;

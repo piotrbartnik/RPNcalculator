@@ -6,6 +6,10 @@
   font-family: 'Android';
   src: url(../fonts/Android_101.ttf) format("truetype"); }
 
+@font-face {
+  font-family: 'OEG';
+  src: url(../fonts/OPTIEdgarBold-Extended.otf) format("truetype"); }
+
 body {
   margin: 0;
   padding: 0;
@@ -76,11 +80,20 @@ p {
   flex-wrap: wrap;
   align-items: center;
   background-color: #bc551a;
-  height: 30px; }
+  height: 30px;
+  box-sizing: border-box;
+  padding: 0 15px;
+  color: white;
+  font-family: "OEG";
+  justify-content: space-between; }
+  .calc__orange--type {
+    font-size: 5px; }
+    .calc__orange--type:nth-of-type(1) {
+      color: black; }
 
 .calc__pad {
   width: 325px;
-  height: 220px;
+  height: 230px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -119,7 +132,8 @@ p {
   font-family: "Android";
   color: #ffffff;
   font-size: 20px;
-  cursor: pointer; }
+  cursor: pointer;
+  margin: 3px; }
   .calc__button:hover {
     background-color: #6d726e;
     transition: .3s ease-in-out; }

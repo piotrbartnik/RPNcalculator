@@ -1,5 +1,6 @@
 @font-face{font-family:'Digital7';src:url(../fonts/digital-7.ttf) format("truetype")}
 @font-face{font-family:'Android';src:url(../fonts/Android_101.ttf) format("truetype")}
+@font-face{font-family:'OEG';src:url(../fonts/OPTIEdgarBold-Extended.otf) format("truetype")}
 body{margin:0;padding:0;font-family:"Digital7";background:linear-gradient(to right,#808080,#3fada8)}
 p{padding:0;margin:0}.container{display:flex;justify-content:center;align-items:center;height:100vh}
 .calc__body{height:500px;width:325px;background-color:#fff;box-shadow:10px 10px 39px 0 rgba(0,0,0,0.75);border-radius:5px;padding:10px}
@@ -8,9 +9,10 @@ p{padding:0;margin:0}.container{display:flex;justify-content:center;align-items:
 .calc__head--solarcontainer{display:flex;flex-wrap:wrap;justify-content:center;width:100%;padding-bottom:5px;border-bottom:2.5px dashed #9e4a26;margin-bottom:10px}
 .calc__head--solar{background-color:#4e3227;border:.5px solid #53443d;width:56px;height:56px;margin-top:4px}
 .calc__head--display{background-color:#767a69;width:245px;height:50px;border-radius:10px;display:flex;justify-content:flex-end;align-items:flex-end;padding:20px;box-sizing:border-box;font-size:40px}
-.calc__orange{display:flex;flex-wrap:wrap;align-items:center;background-color:#bc551a;height:30px}
-.calc__pad{width:325px;height:220px;display:flex;flex-wrap:wrap;justify-content:flex-start;background-color:#c1bbaf;box-sizing:border-box;padding:5px}
+.calc__orange{display:flex;flex-wrap:wrap;align-items:center;background-color:#bc551a;height:30px;box-sizing:border-box;padding:0 15px;color:white;font-family:"OEG";justify-content:space-between}
+.calc__orange--type{font-size:5px}.calc__orange--type:nth-of-type(1){color:black}
+.calc__pad{width:325px;height:230px;display:flex;flex-wrap:wrap;justify-content:flex-start;background-color:#c1bbaf;box-sizing:border-box;padding:5px}
 .calc__pad--cards{width:90px;height:21px;padding:5px 20px}.calc__pad--buttons{display:flex;flex-wrap:wrap;justify-content:space-evenly;width:325px;padding:5px}
 .calc__pad--solarcell{display:flex;flex-wrap:wrap;margin-right:auto;font-family:"Digital7";padding-left:10px;font-size:10px;align-items:center}
-.calc__button{display:flex;flex-wrap:wrap;justify-content:center;align-content:center;width:45px;height:25px;border:4px solid #000;background-color:#313632;border-radius:4px;font-family:"Android";color:#fff;font-size:20px;cursor:pointer}
+.calc__button{display:flex;flex-wrap:wrap;justify-content:center;align-content:center;width:45px;height:25px;border:4px solid #000;background-color:#313632;border-radius:4px;font-family:"Android";color:#fff;font-size:20px;cursor:pointer;margin:3px}
 .calc__button:hover{background-color:#6d726e;transition:.3s ease-in-out}.solarcell__img{width:20px;height:20px;padding-right:5px}
