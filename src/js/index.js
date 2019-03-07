@@ -9,6 +9,11 @@ for (var i = 0; i < buttons.length; i++) {
       if (buttons[j].innerText == 'C') {
         resultDisplay.innerText = '';
       }
+      if (buttons[j].innerText == '=') {
+        resultDisplay.innerText = resultDisplay.innerText.slice(0, -1);
+        let result = eval('6x5');
+        resultDisplay.innerText = result;
+      }
     }
-  })(i))
+  })(i));
 }
