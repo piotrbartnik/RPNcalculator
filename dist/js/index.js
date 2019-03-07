@@ -1,1 +1,1 @@
-"use strict";var buttons=document.querySelectorAll(".calc__button");console.log(buttons);
+"use strict";var buttons=document.querySelectorAll(".calc__button"),displayOne=document.querySelector("#resultDisplay");console.log(buttons);for(var i=0;i<buttons.length;i++)buttons[i].addEventListener("click",function(t){return function(){resultDisplay.innerText+=""+buttons[t].innerText}}(i));
