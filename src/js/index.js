@@ -20,7 +20,6 @@ for (var i = 0; i < buttons.length; i++) {
       if (buttons[j].dataset.value == '=') {
         result = result.join("");
         let calculatedResult = eval(result);
-
         if (calculatedResult.toString().length > 11) {
           resultDisplay.innerText = calculatedResult.toString().slice(0, 10);
           console.log('jajks')
@@ -31,8 +30,6 @@ for (var i = 0; i < buttons.length; i++) {
           result = [];
           result.push(calculatedResult)
         }
-
-
       }
     }
   })(i));
