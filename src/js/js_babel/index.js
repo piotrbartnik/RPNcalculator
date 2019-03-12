@@ -9,7 +9,7 @@ for (var i = 0; i < buttons.length; i++) {
     return function () {
       if (buttons[j].dataset.value != '=') {
         result.push(buttons[j].dataset.value);
-        resultDisplay.innerText += '' + buttons[j].dataset.value;
+        resultDisplay.innerText = result.join('');
       }
 
       if (buttons[j].dataset.value == 'C') {
@@ -19,8 +19,10 @@ for (var i = 0; i < buttons.length; i++) {
 
       if (buttons[j].dataset.value == '=') {
         result = result.join("");
-        resultDisplay.innerText = eval(result);
+        var calculatedResult = eval(result);
+        resultDisplay.innerText = calculatedResult;
         result = [];
+        result.push(calculatedResult);
       }
     };
   }(i));
