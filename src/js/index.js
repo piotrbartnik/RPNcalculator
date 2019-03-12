@@ -10,15 +10,29 @@ for (var i = 0; i < buttons.length; i++) {
         resultDisplay.innerText = result.join('');
       }
       if (buttons[j].dataset.value == 'C') {
+        resultDisplay.innerText = '0';
+        result = [];
+      }
+      if (buttons[j].dataset.value == 'AC') {
         resultDisplay.innerText = '';
         result = [];
       }
       if (buttons[j].dataset.value == '=') {
         result = result.join("");
         let calculatedResult = eval(result);
-        resultDisplay.innerText = calculatedResult;
-        result = [];
-        result.push(calculatedResult)
+
+        if (calculatedResult.toString().length > 11) {
+          resultDisplay.innerText = calculatedResult.toString().slice(0, 10);
+          console.log('jajks')
+          result = [];
+          result.push(calculatedResult.toString().slice(0, 10))
+        } else {
+          resultDisplay.innerText = calculatedResult;
+          result = [];
+          result.push(calculatedResult)
+        }
+
+
       }
     }
   })(i));
