@@ -40,3 +40,11 @@ for (var i = 0; i < buttons.length; i++) {
     };
   }(i));
 }
+
+;
+document.addEventListener('keyup', function (e) {
+  if (e.code.charAt(e.code.length - 1) != '=') {
+    result.push(e.code.charAt(e.code.length - 1));
+    resultDisplay.innerText = result.join('');
+  }
+});
