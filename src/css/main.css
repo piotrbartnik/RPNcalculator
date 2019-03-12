@@ -70,8 +70,8 @@ p {
     border-radius: 10px;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
-    padding: 20px;
+    align-items: center;
+    padding: 0 10px;
     box-sizing: border-box;
     font-size: 40px; }
 
@@ -142,3 +142,14 @@ p {
   width: 20px;
   height: 20px;
   padding-right: 5px; }
+
+.result__cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 20px;
+  height: 20px;
+  flex-wrap: wrap; }
+  .result__cards--card {
+    width: 10px;
+    height: 10px;
+    background-color: red; }
