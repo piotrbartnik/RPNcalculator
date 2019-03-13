@@ -3,9 +3,13 @@ const displayOne = document.querySelector('#resultDisplay');
 let result = [];
 
 let cardDraw = () => {
+  
   let cardDrawResult = Math.ceil(Math.random() * 4);
   let cardSquares = document.querySelectorAll(".result__cards--card");
-  console.log(cardDrawResult, cardSquares)
+  for(let i = 0; i<cardSquares.length;i++) {
+    cardSquares[i].classList.remove('card__active')
+  }
+  cardSquares[cardDrawResult-1].classList.add('card__active')
 }
 
 for (var i = 0; i < buttons.length; i++) {

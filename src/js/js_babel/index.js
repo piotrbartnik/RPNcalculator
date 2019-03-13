@@ -7,7 +7,12 @@ var result = [];
 var cardDraw = function cardDraw() {
   var cardDrawResult = Math.ceil(Math.random() * 4);
   var cardSquares = document.querySelectorAll(".result__cards--card");
-  console.log(cardDrawResult, cardSquares);
+
+  for (var _i = 0; _i < cardSquares.length; _i++) {
+    cardSquares[_i].classList.remove('card__active');
+  }
+
+  cardSquares[cardDrawResult - 1].classList.add('card__active');
 };
 
 for (var i = 0; i < buttons.length; i++) {
