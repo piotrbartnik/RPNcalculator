@@ -2,18 +2,27 @@ const buttons = document.querySelectorAll('.calc__button');
 const displayOne = document.querySelector('#resultDisplay');
 let result = [];
 
+let cardDraw = () => {
+  let cardDrawResult = Math.ceil(Math.random() * 4);
+  let cardSquares = document.querySelectorAll(".result__cards--card");
+  console.log(cardDrawResult, cardSquares)
+}
+
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', ((j) => {
-    return function () {
+    return () => {
+      if (buttons[j].dataset.value == 'C') {
+        resultDisplay.innerText = '0';
+        result = [];
+      }
+      if (buttons[j].dataset.value == 'card') {
+        cardDraw()
+      }
       if (resultDisplay.innerText.length < 12) {
-        if (buttons[j].dataset.value != '=') {
+        if (/[0-9]/.test(buttons[j].dataset.value)) {
           result.push(buttons[j].dataset.value);
           resultDisplay.innerText = result.join('');
-        }
-        if (buttons[j].dataset.value == 'C') {
-          resultDisplay.innerText = '0';
-          result = [];
-        }
+        }        
         if (buttons[j].dataset.value == 'AC') {
           resultDisplay.innerText = '';
           result = [];
@@ -31,7 +40,7 @@ for (var i = 0; i < buttons.length; i++) {
             result = [];
             result.push(calculatedResult)
           }
-        }
+        }       
       }
     }
   })(i));
@@ -46,6 +55,10 @@ let setForNumpad = {
 }
 
 document.addEventListener('keypress', (e) => {
+  if (e.code == "Delete") {
+    resultDisplay.innerText = '0';
+    result = [];
+  }
   if (resultDisplay.innerText.length < 12) {
     if (/[0-9]/.test(e.code.charAt(e.code.length - 1))) {
       result.push(e.code.charAt(e.code.length - 1));
@@ -54,11 +67,7 @@ document.addEventListener('keypress', (e) => {
     if (Object.keys(setForNumpad).indexOf(e.code) >= 0 && result.length > 0) {
       result.push(Object.values(setForNumpad)[Object.keys(setForNumpad).indexOf(e.code)]);
       resultDisplay.innerText = result.join('');
-    }
-    if (e.code == "Delete") {
-      resultDisplay.innerText = '0';
-      result = [];
-    }
+    }    
     if (e.code == "NumpadEnter") {
       result = result.join("");
       let calculatedResult = eval(result);
@@ -75,3 +84,4 @@ document.addEventListener('keypress', (e) => {
     }
   }
 });
+

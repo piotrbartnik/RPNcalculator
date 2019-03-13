@@ -4,18 +4,28 @@ var buttons = document.querySelectorAll('.calc__button');
 var displayOne = document.querySelector('#resultDisplay');
 var result = [];
 
+var cardDraw = function cardDraw() {
+  var cardDrawResult = Math.ceil(Math.random() * 4);
+  var cardSquares = document.querySelectorAll(".result__cards--card");
+  console.log(cardDrawResult, cardSquares);
+};
+
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function (j) {
     return function () {
+      if (buttons[j].dataset.value == 'C') {
+        resultDisplay.innerText = '0';
+        result = [];
+      }
+
+      if (buttons[j].dataset.value == 'card') {
+        cardDraw();
+      }
+
       if (resultDisplay.innerText.length < 12) {
-        if (buttons[j].dataset.value != '=') {
+        if (/[0-9]/.test(buttons[j].dataset.value)) {
           result.push(buttons[j].dataset.value);
           resultDisplay.innerText = result.join('');
-        }
-
-        if (buttons[j].dataset.value == 'C') {
-          resultDisplay.innerText = '0';
-          result = [];
         }
 
         if (buttons[j].dataset.value == 'AC') {
@@ -52,6 +62,11 @@ var setForNumpad = {
   "NumpadDecimal": "."
 };
 document.addEventListener('keypress', function (e) {
+  if (e.code == "Delete") {
+    resultDisplay.innerText = '0';
+    result = [];
+  }
+
   if (resultDisplay.innerText.length < 12) {
     if (/[0-9]/.test(e.code.charAt(e.code.length - 1))) {
       result.push(e.code.charAt(e.code.length - 1));
@@ -61,11 +76,6 @@ document.addEventListener('keypress', function (e) {
     if (Object.keys(setForNumpad).indexOf(e.code) >= 0 && result.length > 0) {
       result.push(Object.values(setForNumpad)[Object.keys(setForNumpad).indexOf(e.code)]);
       resultDisplay.innerText = result.join('');
-    }
-
-    if (e.code == "Delete") {
-      resultDisplay.innerText = '0';
-      result = [];
     }
 
     if (e.code == "NumpadEnter") {
