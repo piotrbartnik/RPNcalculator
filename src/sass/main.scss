@@ -186,13 +186,28 @@ p {
 
 .result__cards {
   @include flex;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   flex-wrap: wrap;
+  justify-content: space-around;
 
   &--card {
-    width: 10px;
-    height: 10px;
-    background-color: red;
+    width: 13px;
+    height: 13px;
+    
+  }
+}
+
+.card {
+  &__spades, &__clubs {
+    background-color: #43424a;
+    border: 1px solid #303133;
+    box-sizing: border-box;
+  }
+
+  &__hearts, &__diamonds {
+    background-color: #63473b;
+    border: 1px solid #503a2f;
+    box-sizing: border-box;
   }
 }
