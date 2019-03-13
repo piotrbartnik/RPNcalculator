@@ -146,13 +146,18 @@ p {
 .result__cards {
   display: flex;
   flex-wrap: wrap;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   flex-wrap: wrap;
-  justify-content: space-around; }
+  justify-content: space-around;
+  font-size: 0px; }
   .result__cards--card {
-    width: 13px;
-    height: 13px; }
+    width: 18px;
+    height: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
 
 .card__spades, .card__clubs {
   background-color: #43424a;
@@ -163,3 +168,8 @@ p {
   background-color: #63473b;
   border: 1px solid #503a2f;
   box-sizing: border-box; }
+
+.card__active {
+  font-size: 15px;
+  display: flex;
+  flex-wrap: wrap; }

@@ -186,14 +186,18 @@ p {
 
 .result__cards {
   @include flex;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   flex-wrap: wrap;
   justify-content: space-around;
+  font-size: 0px;  
 
   &--card {
-    width: 13px;
-    height: 13px;
+    width: 18px;
+    height: 18px;
+    @include flex;
+    justify-content: center;
+    align-items: center;
     
   }
 }
@@ -209,5 +213,10 @@ p {
     background-color: #63473b;
     border: 1px solid #503a2f;
     box-sizing: border-box;
+  }
+
+  &__active {
+    font-size: 15px;
+   @include flex;
   }
 }
