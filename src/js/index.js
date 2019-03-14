@@ -123,7 +123,6 @@ document.addEventListener('keypress', (e) => {
   }
 });
 
-
 function sum(a, b) {
   return a + b;
 }
