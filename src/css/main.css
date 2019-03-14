@@ -162,14 +162,19 @@ p {
 .card__spades, .card__clubs {
   background-color: #43424a;
   border: 1px solid #303133;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  transition: 0.2s all; }
 
 .card__hearts, .card__diamonds {
   background-color: #63473b;
   border: 1px solid #503a2f;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  transition: 0.2s all; }
 
 .card__active {
   font-size: 15px;
   display: flex;
   flex-wrap: wrap; }
+
+.drawing {
+  background-color: #f7b0b0; }

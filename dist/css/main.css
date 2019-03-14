@@ -18,6 +18,6 @@ p{padding:0;margin:0}.container{display:flex;justify-content:center;align-items:
 .calc__button:hover{background-color:#6d726e;transition:.3s ease-in-out}.solarcell__img{width:20px;height:20px;padding-right:5px}
 .result__cards{display:flex;flex-wrap:wrap;width:40px;height:40px;flex-wrap:wrap;justify-content:space-around;font-size:0}
 .result__cards--card{width:18px;height:18px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center}
-.card__spades,.card__clubs{background-color:#43424a;border:1px solid #303133;box-sizing:border-box}
-.card__hearts,.card__diamonds{background-color:#63473b;border:1px solid #503a2f;box-sizing:border-box}
-.card__active{font-size:15px;display:flex;flex-wrap:wrap}
+.card__spades,.card__clubs{background-color:#43424a;border:1px solid #303133;box-sizing:border-box;transition:.2s all}
+.card__hearts,.card__diamonds{background-color:#63473b;border:1px solid #503a2f;box-sizing:border-box;transition:.2s all}
+.card__active{font-size:15px;display:flex;flex-wrap:wrap}.drawing{background-color:#f7b0b0}

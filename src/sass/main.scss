@@ -207,16 +207,22 @@ p {
     background-color: #43424a;
     border: 1px solid #303133;
     box-sizing: border-box;
+    transition: 0.2s all;
   }
 
   &__hearts, &__diamonds {
     background-color: #63473b;
     border: 1px solid #503a2f;
     box-sizing: border-box;
+    transition: 0.2s all;
   }
 
   &__active {
     font-size: 15px;
    @include flex;
   }
+}
+
+.drawing {
+  background-color: lighten($color: #f38181, $amount: 10%)
 }
