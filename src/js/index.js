@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll('.calc__button');
 const displayOne = document.querySelector('#resultDisplay');
 let result = [];
+let isResult;
 
 let cardDraw = () => {
   let cardSquares = document.querySelectorAll(".result__cards--card");
@@ -33,7 +34,9 @@ let cardDraw = () => {
 }
 
 for (var i = 0; i < buttons.length; i++) {
+ 
   buttons[i].addEventListener('click', ((j) => {
+    
     return () => {
       if (buttons[j].dataset.value == 'C') {
         resultDisplay.innerText = '0';
@@ -44,6 +47,9 @@ for (var i = 0; i < buttons.length; i++) {
       }
       if (resultDisplay.innerText.length < 12) {
         if (/[0-9]/.test(buttons[j].dataset.value)) {
+          if (isResult) {
+            result = [];
+          }
           result.push(buttons[j].dataset.value);
           resultDisplay.innerText = result.join('');
         }
@@ -63,6 +69,7 @@ for (var i = 0; i < buttons.length; i++) {
             resultDisplay.innerText = calculatedResult;
             result = [];
             result.push(calculatedResult)
+            isResult = true;
           }
         }
       }
@@ -79,16 +86,22 @@ let setForNumpad = {
 }
 
 document.addEventListener('keypress', (e) => {
+  console.log(isResult)
   if (e.code == "Delete") {
     resultDisplay.innerText = '0';
     result = [];
   }
   if (resultDisplay.innerText.length < 12) {
     if (/[0-9]/.test(e.code.charAt(e.code.length - 1))) {
+      if (isResult) {
+        result = [];
+      }
+      isResult = false;
       result.push(e.code.charAt(e.code.length - 1));
       resultDisplay.innerText = result.join('');
     }
     if (Object.keys(setForNumpad).indexOf(e.code) >= 0 && result.length > 0) {
+      isResult = false;
       result.push(Object.values(setForNumpad)[Object.keys(setForNumpad).indexOf(e.code)]);
       resultDisplay.innerText = result.join('');
     }
@@ -104,7 +117,19 @@ document.addEventListener('keypress', (e) => {
         resultDisplay.innerText = calculatedResult;
         result = [];
         result.push(calculatedResult)
+        isResult = true;
       }
     }
   }
 });
+
+
+function sum(a, b) {
+  return a + b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+module.exports = { sum: sum, multiply: multiply } 
