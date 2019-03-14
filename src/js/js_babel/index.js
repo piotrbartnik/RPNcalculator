@@ -5,14 +5,45 @@ var displayOne = document.querySelector('#resultDisplay');
 var result = [];
 
 var cardDraw = function cardDraw() {
-  var cardDrawResult = Math.ceil(Math.random() * 4);
   var cardSquares = document.querySelectorAll(".result__cards--card");
+  resultDisplay.innerText = "";
 
   for (var _i = 0; _i < cardSquares.length; _i++) {
     cardSquares[_i].classList.remove('card__active');
+
+    cardSquares[_i].classList.remove('drawing');
   }
 
-  cardSquares[cardDrawResult - 1].classList.add('card__active');
+  var _loop = function _loop(_i2) {
+    var j = _i2;
+    setTimeout(function () {
+      cardSquares[j % 4].classList.add('drawing');
+    }, 200 * _i2);
+  };
+
+  for (var _i2 = 0; _i2 < 20; _i2++) {
+    _loop(_i2);
+  }
+
+  setTimeout(function () {
+    var _loop2 = function _loop2(_i3) {
+      var j = _i3;
+      setTimeout(function () {
+        cardSquares[j % 4].classList.remove('drawing');
+      }, 200 * _i3);
+    };
+
+    for (var _i3 = 0; _i3 < 20; _i3++) {
+      _loop2(_i3);
+    }
+  }, 300);
+  setTimeout(function () {
+    var cardDrawResult = Math.ceil(Math.random() * 4);
+    var numberDrawResult = Math.ceil(Math.random() * 13);
+    cardSquares[cardDrawResult - 1].classList.add('drawing');
+    cardSquares[cardDrawResult - 1].classList.add('card__active');
+    resultDisplay.innerText = "-".concat(numberDrawResult, "-");
+  }, 4200);
 };
 
 for (var i = 0; i < buttons.length; i++) {
