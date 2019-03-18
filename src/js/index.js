@@ -1,7 +1,25 @@
 const buttons = document.querySelectorAll('.calc__button');
-const displayOne = document.querySelector('#resultDisplay');
+const resultDisplay = document.querySelector('#resultDisplay');
 let result = [];
 let isResult;
+
+let calculateResult = (array) => {
+  array = array.join("");
+  let calculatedResult = eval(array);
+  if (calculatedResult.toString().length > 11) {
+    // resultDisplay.innerText = calculatedResult.toString().slice(0, 10);
+    console.log('jajks')
+    array = [];
+    array.push(calculatedResult.toString().slice(0, 10))
+  } else {
+    // resultDisplay.innerText = calculatedResult;
+    array = [];
+    array.push(calculatedResult)
+    isResult = true;
+  }
+  return calculatedResult
+}
+
 
 let cardDraw = () => {
   let cardSquares = document.querySelectorAll(".result__cards--card");
@@ -58,19 +76,7 @@ for (var i = 0; i < buttons.length; i++) {
           result = [];
         }
         if (buttons[j].dataset.value == '=') {
-          result = result.join("");
-          let calculatedResult = eval(result);
-          if (calculatedResult.toString().length > 11) {
-            resultDisplay.innerText = calculatedResult.toString().slice(0, 10);
-            console.log('jajks')
-            result = [];
-            result.push(calculatedResult.toString().slice(0, 10))
-          } else {
-            resultDisplay.innerText = calculatedResult;
-            result = [];
-            result.push(calculatedResult)
-            isResult = true;
-          }
+          calculateResult(result);
         }
       }
     }
@@ -131,4 +137,4 @@ function multiply(a, b) {
   return a * b;
 }
 
-module.exports = { sum: sum, multiply: multiply } 
+module.exports = {calculateResult : calculateResult } 

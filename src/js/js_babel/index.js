@@ -1,9 +1,28 @@
 "use strict";
 
 var buttons = document.querySelectorAll('.calc__button');
-var displayOne = document.querySelector('#resultDisplay');
+var resultDisplay = document.querySelector('#resultDisplay');
 var result = [];
 var isResult;
+
+var calculateResult = function calculateResult(array) {
+  array = array.join("");
+  var calculatedResult = eval(array);
+
+  if (calculatedResult.toString().length > 11) {
+    // resultDisplay.innerText = calculatedResult.toString().slice(0, 10);
+    console.log('jajks');
+    array = [];
+    array.push(calculatedResult.toString().slice(0, 10));
+  } else {
+    // resultDisplay.innerText = calculatedResult;
+    array = [];
+    array.push(calculatedResult);
+    isResult = true;
+  }
+
+  return calculatedResult;
+};
 
 var cardDraw = function cardDraw() {
   var cardSquares = document.querySelectorAll(".result__cards--card");
@@ -75,20 +94,7 @@ for (var i = 0; i < buttons.length; i++) {
         }
 
         if (buttons[j].dataset.value == '=') {
-          result = result.join("");
-          var calculatedResult = eval(result);
-
-          if (calculatedResult.toString().length > 11) {
-            resultDisplay.innerText = calculatedResult.toString().slice(0, 10);
-            console.log('jajks');
-            result = [];
-            result.push(calculatedResult.toString().slice(0, 10));
-          } else {
-            resultDisplay.innerText = calculatedResult;
-            result = [];
-            result.push(calculatedResult);
-            isResult = true;
-          }
+          calculateResult(result);
         }
       }
     };
@@ -156,6 +162,5 @@ function multiply(a, b) {
 }
 
 module.exports = {
-  sum: sum,
-  multiply: multiply
+  calculateResult: calculateResult
 };
