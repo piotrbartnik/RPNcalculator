@@ -10,12 +10,9 @@ var calculateResult = function calculateResult(array) {
   var calculatedResult = eval(array);
 
   if (calculatedResult.toString().length > 11) {
-    // resultDisplay.innerText = calculatedResult.toString().slice(0, 10);
-    console.log('jajks');
     array = [];
     array.push(calculatedResult.toString().slice(0, 10));
   } else {
-    // resultDisplay.innerText = calculatedResult;
     array = [];
     array.push(calculatedResult);
     isResult = true;
@@ -95,6 +92,12 @@ for (var i = 0; i < buttons.length; i++) {
 
         if (buttons[j].dataset.value == '=') {
           calculateResult(result);
+
+          if (calculateResult(result).length > 11) {
+            resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
+          }
+
+          resultDisplay.innerText = calculateResult(result);
         }
       }
     };
@@ -135,20 +138,7 @@ document.addEventListener('keypress', function (e) {
     }
 
     if (e.code == "NumpadEnter") {
-      result = result.join("");
-      var calculatedResult = eval(result);
-
-      if (calculatedResult.toString().length > 11) {
-        resultDisplay.innerText = calculatedResult.toString().slice(0, 10);
-        console.log('jajks');
-        result = [];
-        result.push(calculatedResult.toString().slice(0, 10));
-      } else {
-        resultDisplay.innerText = calculatedResult;
-        result = [];
-        result.push(calculatedResult);
-        isResult = true;
-      }
+      calculateResult(result);
     }
   }
 });

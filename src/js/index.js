@@ -7,17 +7,14 @@ let calculateResult = (array) => {
   array = array.join("");
   let calculatedResult = eval(array);
   if (calculatedResult.toString().length > 11) {
-    // resultDisplay.innerText = calculatedResult.toString().slice(0, 10);
-    console.log('jajks')
     array = [];
     array.push(calculatedResult.toString().slice(0, 10))
-  } else {
-    // resultDisplay.innerText = calculatedResult;
+  } else {  
     array = [];
     array.push(calculatedResult)
     isResult = true;
   }
-  return calculatedResult
+  return calculatedResult;
 }
 
 
@@ -51,10 +48,8 @@ let cardDraw = () => {
   }, 4200)
 }
 
-for (var i = 0; i < buttons.length; i++) {
- 
-  buttons[i].addEventListener('click', ((j) => {
-    
+for (var i = 0; i < buttons.length; i++) { 
+  buttons[i].addEventListener('click', ((j) => {    
     return () => {
       if (buttons[j].dataset.value == 'C') {
         resultDisplay.innerText = '0';
@@ -77,6 +72,10 @@ for (var i = 0; i < buttons.length; i++) {
         }
         if (buttons[j].dataset.value == '=') {
           calculateResult(result);
+          if(calculateResult(result).length > 11) {
+            resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
+          }
+          resultDisplay.innerText = calculateResult(result);
         }
       }
     }
@@ -112,19 +111,7 @@ document.addEventListener('keypress', (e) => {
       resultDisplay.innerText = result.join('');
     }
     if (e.code == "NumpadEnter") {
-      result = result.join("");
-      let calculatedResult = eval(result);
-      if (calculatedResult.toString().length > 11) {
-        resultDisplay.innerText = calculatedResult.toString().slice(0, 10);
-        console.log('jajks')
-        result = [];
-        result.push(calculatedResult.toString().slice(0, 10))
-      } else {
-        resultDisplay.innerText = calculatedResult;
-        result = [];
-        result.push(calculatedResult)
-        isResult = true;
-      }
+      calculateResult(result)
     }
   }
 });
