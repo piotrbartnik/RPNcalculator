@@ -4,7 +4,6 @@ let splitFunc = (str) => {
   return str.split('')
 }
 
-
 test('adding substracting', () => {
   expect(mathModule.calculateResult(splitFunc('1+2'))).toBe(3);
   expect(mathModule.calculateResult(splitFunc('14+3'))).toBe(17);
