@@ -9,14 +9,13 @@ let calculateResult = (array) => {
   if (calculatedResult.toString().length > 11) {
     array = [];
     array.push(calculatedResult.toString().slice(0, 10))
-  } else {  
+  } else {
     array = [];
     array.push(calculatedResult)
     isResult = true;
   }
   return calculatedResult;
 }
-
 
 let cardDraw = () => {
   let cardSquares = document.querySelectorAll(".result__cards--card");
@@ -41,15 +40,15 @@ let cardDraw = () => {
   }, 300);
   setTimeout(() => {
     let cardDrawResult = Math.ceil(Math.random() * 4);
-    let numberDrawResult = Math.ceil(Math.random() * 13);    
+    let numberDrawResult = Math.ceil(Math.random() * 13);
     cardSquares[cardDrawResult - 1].classList.add('drawing');
     cardSquares[cardDrawResult - 1].classList.add('card__active');
     resultDisplay.innerText = `-${numberDrawResult}-`;
   }, 4200)
 }
 
-for (var i = 0; i < buttons.length; i++) { 
-  buttons[i].addEventListener('click', ((j) => {    
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', ((j) => {
     return () => {
       if (buttons[j].dataset.value == 'C') {
         resultDisplay.innerText = '0';
@@ -72,7 +71,7 @@ for (var i = 0; i < buttons.length; i++) {
         }
         if (buttons[j].dataset.value == '=') {
           calculateResult(result);
-          if(calculateResult(result).length > 11) {
+          if (calculateResult(result).length > 11) {
             resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
           }
           resultDisplay.innerText = calculateResult(result);
@@ -111,7 +110,11 @@ document.addEventListener('keypress', (e) => {
       resultDisplay.innerText = result.join('');
     }
     if (e.code == "NumpadEnter") {
-      calculateResult(result)
+      calculateResult(result);
+      if (calculateResult(result).length > 11) {
+        resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
+      }
+      resultDisplay.innerText = calculateResult(result);
     }
   }
 });
@@ -124,4 +127,6 @@ function multiply(a, b) {
   return a * b;
 }
 
-module.exports = {calculateResult : calculateResult } 
+module.exports = {
+  calculateResult: calculateResult
+}

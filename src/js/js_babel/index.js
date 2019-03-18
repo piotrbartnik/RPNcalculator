@@ -139,6 +139,12 @@ document.addEventListener('keypress', function (e) {
 
     if (e.code == "NumpadEnter") {
       calculateResult(result);
+
+      if (calculateResult(result).length > 11) {
+        resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
+      }
+
+      resultDisplay.innerText = calculateResult(result);
     }
   }
 });
