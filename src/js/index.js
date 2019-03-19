@@ -10,13 +10,10 @@ let calculateResult = (array) => {
     array = [];
     array.push(calculatedResult.toString().slice(0, 10))
   } else {
-    console.log()
     array = [];
     array.push(calculatedResult)
     isResult = true;
   }
-  console.log(array)
-  
   return calculatedResult, array;
 }
 
@@ -50,6 +47,8 @@ let cardDraw = () => {
   }, 4200)
 }
 
+let buttonMathOperands = ['*', '+', '-', '/', '%', '.']
+
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', ((j) => {
     return () => {
@@ -67,19 +66,26 @@ for (var i = 0; i < buttons.length; i++) {
           }
           result.push(buttons[j].dataset.value);
           resultDisplay.innerText = result.join('');
+        }        
+      }
+      if (resultDisplay.innerText.length < 10) {
+        if (buttonMathOperands.indexOf(buttons[j].dataset.value) != -1) {
+          isResult = false;
+          result.push(buttons[j].dataset.value);
+          resultDisplay.innerText = result.join('');
+        }        
+      }
+      if (buttons[j].dataset.value == 'AC') {
+        resultDisplay.innerText = '';
+        result = [];
+      }
+      if (buttons[j].dataset.value == '=') {
+        calculateResult(result);
+        result = calculateResult(result)
+        if (calculateResult(result).length > 10) {
+          resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
         }
-        if (buttons[j].dataset.value == 'AC') {
-          resultDisplay.innerText = '';
-          result = [];
-        }
-        if (buttons[j].dataset.value == '=') {
-          calculateResult(result);
-          result = calculateResult(result)
-          if (calculateResult(result).length > 10) {
-            resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
-          }
-          resultDisplay.innerText = calculateResult(result);
-        }
+        resultDisplay.innerText = calculateResult(result);
       }
     }
   })(i));
@@ -94,8 +100,6 @@ let setForNumpad = {
 }
 
 document.addEventListener('keypress', (e) => {
-  console.log(result)
-  console.log(isResult)
   if (e.code == "Delete") {
     resultDisplay.innerText = '0';
     result = [];
@@ -109,14 +113,15 @@ document.addEventListener('keypress', (e) => {
       result.push(e.code.charAt(e.code.length - 1));
       resultDisplay.innerText = result.join('');
     }
-    if (Object.keys(setForNumpad).indexOf(e.code) >= 0 && result.length > 0) {
+  }
+  if (resultDisplay.innerText.length < 10) {
+    if (Object.keys(setForNumpad).indexOf(e.code) >= 0 && result.length > 0 && /[0-9]/.test(result[result.length - 1])) {
       isResult = false;
       result.push(Object.values(setForNumpad)[Object.keys(setForNumpad).indexOf(e.code)]);
       resultDisplay.innerText = result.join('');
-    }    
+    }
   }
   if (e.code == "NumpadEnter") {
-    console.log('lpol')
     calculateResult(result);
     result = calculateResult(result)
     if (calculateResult(result).length > 10) {
