@@ -10,11 +10,14 @@ let calculateResult = (array) => {
     array = [];
     array.push(calculatedResult.toString().slice(0, 10))
   } else {
+    console.log()
     array = [];
     array.push(calculatedResult)
     isResult = true;
   }
-  return calculatedResult;
+  console.log(array)
+  
+  return calculatedResult, array;
 }
 
 let cardDraw = () => {
@@ -57,7 +60,7 @@ for (var i = 0; i < buttons.length; i++) {
       if (buttons[j].dataset.value == 'card') {
         cardDraw()
       }
-      if (resultDisplay.innerText.length < 12) {
+      if (resultDisplay.innerText.length < 11) {
         if (/[0-9]/.test(buttons[j].dataset.value)) {
           if (isResult) {
             result = [];
@@ -71,7 +74,8 @@ for (var i = 0; i < buttons.length; i++) {
         }
         if (buttons[j].dataset.value == '=') {
           calculateResult(result);
-          if (calculateResult(result).length > 11) {
+          result = calculateResult(result)
+          if (calculateResult(result).length > 10) {
             resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
           }
           resultDisplay.innerText = calculateResult(result);
@@ -90,12 +94,13 @@ let setForNumpad = {
 }
 
 document.addEventListener('keypress', (e) => {
+  console.log(result)
   console.log(isResult)
   if (e.code == "Delete") {
     resultDisplay.innerText = '0';
     result = [];
   }
-  if (resultDisplay.innerText.length < 12) {
+  if (resultDisplay.innerText.length < 11) {
     if (/[0-9]/.test(e.code.charAt(e.code.length - 1))) {
       if (isResult) {
         result = [];
@@ -108,14 +113,16 @@ document.addEventListener('keypress', (e) => {
       isResult = false;
       result.push(Object.values(setForNumpad)[Object.keys(setForNumpad).indexOf(e.code)]);
       resultDisplay.innerText = result.join('');
+    }    
+  }
+  if (e.code == "NumpadEnter") {
+    console.log('lpol')
+    calculateResult(result);
+    result = calculateResult(result)
+    if (calculateResult(result).length > 10) {
+      resultDisplay.innerText = calculateResult(result).toString().slice(0, 9);
     }
-    if (e.code == "NumpadEnter") {
-      calculateResult(result);
-      if (calculateResult(result).length > 11) {
-        resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
-      }
-      resultDisplay.innerText = calculateResult(result);
-    }
+    resultDisplay.innerText = calculateResult(result);
   }
 });
 

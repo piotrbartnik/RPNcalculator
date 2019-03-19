@@ -13,12 +13,14 @@ var calculateResult = function calculateResult(array) {
     array = [];
     array.push(calculatedResult.toString().slice(0, 10));
   } else {
+    console.log();
     array = [];
     array.push(calculatedResult);
     isResult = true;
   }
 
-  return calculatedResult;
+  console.log(array);
+  return calculatedResult, array;
 };
 
 var cardDraw = function cardDraw() {
@@ -75,7 +77,7 @@ for (var i = 0; i < buttons.length; i++) {
         cardDraw();
       }
 
-      if (resultDisplay.innerText.length < 12) {
+      if (resultDisplay.innerText.length < 11) {
         if (/[0-9]/.test(buttons[j].dataset.value)) {
           if (isResult) {
             result = [];
@@ -92,8 +94,9 @@ for (var i = 0; i < buttons.length; i++) {
 
         if (buttons[j].dataset.value == '=') {
           calculateResult(result);
+          result = calculateResult(result);
 
-          if (calculateResult(result).length > 11) {
+          if (calculateResult(result).length > 10) {
             resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
           }
 
@@ -113,6 +116,7 @@ var setForNumpad = {
   "NumpadDecimal": "."
 };
 document.addEventListener('keypress', function (e) {
+  console.log(result);
   console.log(isResult);
 
   if (e.code == "Delete") {
@@ -120,7 +124,7 @@ document.addEventListener('keypress', function (e) {
     result = [];
   }
 
-  if (resultDisplay.innerText.length < 12) {
+  if (resultDisplay.innerText.length < 11) {
     if (/[0-9]/.test(e.code.charAt(e.code.length - 1))) {
       if (isResult) {
         result = [];
@@ -136,16 +140,18 @@ document.addEventListener('keypress', function (e) {
       result.push(Object.values(setForNumpad)[Object.keys(setForNumpad).indexOf(e.code)]);
       resultDisplay.innerText = result.join('');
     }
+  }
 
-    if (e.code == "NumpadEnter") {
-      calculateResult(result);
+  if (e.code == "NumpadEnter") {
+    console.log('lpol');
+    calculateResult(result);
+    result = calculateResult(result);
 
-      if (calculateResult(result).length > 11) {
-        resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
-      }
-
-      resultDisplay.innerText = calculateResult(result);
+    if (calculateResult(result).length > 10) {
+      resultDisplay.innerText = calculateResult(result).toString().slice(0, 9);
     }
+
+    resultDisplay.innerText = calculateResult(result);
   }
 });
 module.exports = {
