@@ -9,5 +9,6 @@ To run test type:
 
   ```
   npm test
+  ```
 
 Tests are written in Jest.  
