@@ -12,3 +12,6 @@ To run test type:
   ```
 
 Tests are written in Jest.  
+
+## Type of calculator
+
