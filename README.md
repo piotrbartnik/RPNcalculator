@@ -3,6 +3,8 @@
 Reverse Polish notation is type of mathematical notation where the operators follow their operands. 
 For example (1+4)*5 in RPN equals to 4 1 + 5 *.
 
+For parsing standard mathematical equation to RPN calculator uses Shunting-yard algorithm.
+
 ## Tests
 
 To run test type:
