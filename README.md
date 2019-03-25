@@ -17,3 +17,6 @@ Tests are written in Jest.
 
 ## Type of calculator
 
+Layout and features of calculator are borrowed from Casio SL-831 liquid calculator.
+
+That type of calculator had 
