@@ -19,4 +19,4 @@ Tests are written in Jest.
 
 Layout and features of calculator are borrowed from Casio SL-831 liquid calculator.
 
-That type of calculator had feature that draws card color and number from 1 to 13. Than players could read their fate from provided guide. 
+That type of calculator had fenature that draws card color and number from 1 to 13. Than players could read their fate from provided guide. 
