@@ -1,4 +1,5 @@
 var mathModule = require('../js/index');
+var rpnModule = require('../js/rpn');
 
 let splitFunc = (str) => {
   return str.split('')
@@ -20,4 +21,8 @@ test('multiplying dividing', () => {
 
 test('misc', () => {
   expect(mathModule.calculateResult(splitFunc('1+2+15-6*27'))).toBe(-144);
+});
+
+test('rpn', () => {
+  expect(rpnModule.rpn('1+2')).toBe('1 2 +');
 });
