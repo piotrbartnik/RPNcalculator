@@ -1,1 +1,1 @@
-"use strict";var rpn=function(n){for(var t=["+","-","*","/"],r=[],s=[],e=0;e<n.length;e++)/[0-9]+/.test(n[e])&&r.push(n[e]),-1!=t.indexOf(n[e])&&("-"===n[e]&&"*"===s[0]&&(r.push(s[0]),s.splice(0,1)),s.unshift(n[e]));return r.concat(s).join(" ")};rpn(["1","+","2","-","6"]);
+"use strict";var rpn=function(n){for(var r=["+","-","*","/"],t=[],e=[],p=0;p<n.length;p++)/[0-9]+/.test(n[p])&&t.push(n[p]),-1!=r.indexOf(n[p])&&("-"===n[p]&&"*"===e[0]&&(t.push(e[0]),e.splice(0,1)),e.unshift(n[p]));return t.concat(e).join(" ")};rpn(["1","+","2","-","6"]),module.exports={rpn:rpn};
