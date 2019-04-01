@@ -24,3 +24,6 @@ var rpn = function rpn(eq) {
 };
 
 rpn(['1', '+', '2', '-', '6']);
+module.exports = {
+  rpn: rpn
+};

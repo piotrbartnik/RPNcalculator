@@ -18,7 +18,7 @@ var calculateResult = function calculateResult(array) {
     isResult = true;
   }
 
-  return calculatedResult, array;
+  return calculatedResult;
 };
 
 var cardDraw = function cardDraw() {

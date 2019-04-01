@@ -14,7 +14,7 @@ let calculateResult = (array) => {
     array.push(calculatedResult)
     isResult = true;
   }
-  return calculatedResult, array;
+  return calculatedResult;
 }
 
 let cardDraw = () => {
