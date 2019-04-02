@@ -23,7 +23,6 @@ var rpn = function rpn(eq) {
   return nums.concat(arrOperands).join(" ");
 };
 
-rpn(['1', '+', '2', '-', '6']);
 module.exports = {
   rpn: rpn
 };

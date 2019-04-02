@@ -1,7 +1,24 @@
 const buttons = document.querySelectorAll('.calc__button');
 const resultDisplay = document.querySelector('#resultDisplay');
+const rpnDisplay = document.querySelector('#rpnDisplay');
 let result = [];
+let rpnArr = [];
 let isResult;
+
+let rpnReady = (array) => {
+  let emptyString = "";
+  let rpnReadyArray = [];
+  for (i = 0; i <= array.length; i++) {
+    if (/\d/.test(array[i])) {
+      emptyString += array[i]
+    } else if (!/\d/.test(array[i])) {
+      rpnReadyArray.push(emptyString);
+      emptyString = '';
+      rpnReadyArray.push(array[i])
+    }
+  }
+  return rpnReadyArray.slice(0, -1);
+}
 
 let calculateResult = (array) => {
   array = array.join("");
@@ -14,7 +31,7 @@ let calculateResult = (array) => {
     array.push(calculatedResult)
     isResult = true;
   }
-  return calculatedResult;
+  return calculatedResult, array;;
 }
 
 let cardDraw = () => {
@@ -66,14 +83,14 @@ for (var i = 0; i < buttons.length; i++) {
           }
           result.push(buttons[j].dataset.value);
           resultDisplay.innerText = result.join('');
-        }        
+        }
       }
       if (resultDisplay.innerText.length < 10) {
         if (buttonMathOperands.indexOf(buttons[j].dataset.value) != -1) {
           isResult = false;
           result.push(buttons[j].dataset.value);
           resultDisplay.innerText = result.join('');
-        }        
+        }
       }
       if (buttons[j].dataset.value == 'AC') {
         resultDisplay.innerText = '';
@@ -81,7 +98,9 @@ for (var i = 0; i < buttons.length; i++) {
       }
       if (buttons[j].dataset.value == '=') {
         calculateResult(result);
-        result = calculateResult(result)
+        rpnDisplay.innerHTML = rpn(rpnReady(result));
+        console.log(rpn(rpnReady(result)));
+        result = calculateResult(result);
         if (calculateResult(result).length > 10) {
           resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
         }
@@ -117,13 +136,16 @@ document.addEventListener('keypress', (e) => {
   if (resultDisplay.innerText.length < 10) {
     if (Object.keys(setForNumpad).indexOf(e.code) >= 0 && result.length > 0 && /[0-9]/.test(result[result.length - 1])) {
       isResult = false;
+      rpnArr.push(result.join(''));
       result.push(Object.values(setForNumpad)[Object.keys(setForNumpad).indexOf(e.code)]);
       resultDisplay.innerText = result.join('');
     }
   }
   if (e.code == "NumpadEnter") {
     calculateResult(result);
-    result = calculateResult(result)
+    rpnDisplay.innerHTML = rpn(rpnReady(result));
+    console.log(rpn(rpnReady(result)));
+    result = calculateResult(result);
     if (calculateResult(result).length > 10) {
       resultDisplay.innerText = calculateResult(result).toString().slice(0, 9);
     }

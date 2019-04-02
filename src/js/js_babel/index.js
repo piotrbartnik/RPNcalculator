@@ -2,8 +2,27 @@
 
 var buttons = document.querySelectorAll('.calc__button');
 var resultDisplay = document.querySelector('#resultDisplay');
+var rpnDisplay = document.querySelector('#rpnDisplay');
 var result = [];
+var rpnArr = [];
 var isResult;
+
+var rpnReady = function rpnReady(array) {
+  var emptyString = "";
+  var rpnReadyArray = [];
+
+  for (i = 0; i <= array.length; i++) {
+    if (/\d/.test(array[i])) {
+      emptyString += array[i];
+    } else if (!/\d/.test(array[i])) {
+      rpnReadyArray.push(emptyString);
+      emptyString = '';
+      rpnReadyArray.push(array[i]);
+    }
+  }
+
+  return rpnReadyArray.slice(0, -1);
+};
 
 var calculateResult = function calculateResult(array) {
   array = array.join("");
@@ -18,7 +37,8 @@ var calculateResult = function calculateResult(array) {
     isResult = true;
   }
 
-  return calculatedResult;
+  return calculatedResult, array;
+  ;
 };
 
 var cardDraw = function cardDraw() {
@@ -103,6 +123,8 @@ for (var i = 0; i < buttons.length; i++) {
 
       if (buttons[j].dataset.value == '=') {
         calculateResult(result);
+        rpnDisplay.innerHTML = rpn(rpnReady(result));
+        console.log(rpn(rpnReady(result)));
         result = calculateResult(result);
 
         if (calculateResult(result).length > 10) {
@@ -144,6 +166,7 @@ document.addEventListener('keypress', function (e) {
   if (resultDisplay.innerText.length < 10) {
     if (Object.keys(setForNumpad).indexOf(e.code) >= 0 && result.length > 0 && /[0-9]/.test(result[result.length - 1])) {
       isResult = false;
+      rpnArr.push(result.join(''));
       result.push(Object.values(setForNumpad)[Object.keys(setForNumpad).indexOf(e.code)]);
       resultDisplay.innerText = result.join('');
     }
@@ -151,6 +174,8 @@ document.addEventListener('keypress', function (e) {
 
   if (e.code == "NumpadEnter") {
     calculateResult(result);
+    rpnDisplay.innerHTML = rpn(rpnReady(result));
+    console.log(rpn(rpnReady(result)));
     result = calculateResult(result);
 
     if (calculateResult(result).length > 10) {
