@@ -17,7 +17,7 @@ For practical use calculator can multiply, divide, add and substract and show re
 - ![JS](https://icongr.am/devicon/javascript-original.svg)
 - ![Gulp](https://icongr.am/devicon/gulp-plain.svg)
 - ![babel](https://icongr.am/devicon/babel-original.svg)
-- ![jest](https://cdn-images-1.medium.com/max/1600/1*3whjFY1CJUag-a3abRqyQA.png)
+- ![jest](https://cdn-images-1.medium.com/max/1600/1*3whjFY1CJUag-a3abRqyQA.png | width=32)
 
 ## Instalation and test
 
