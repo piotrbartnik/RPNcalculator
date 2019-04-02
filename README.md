@@ -10,6 +10,15 @@ For parsing standard mathematical equation to this RPN calculator uses Shunting-
 
 For practical use calculator can multiply, divide, add and substract and show result on upper screen and RPN equation on lower screen.
 
+## Technologies used
+
+-HTML5
+-Sass
+-[JavaScript](https://icongr.am/devicon/javascript-original.svg)
+-gulp
+-babel
+-Jest
+
 ## Instalation and test
 
 To install type:
