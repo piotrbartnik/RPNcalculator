@@ -1,5 +1,6 @@
 Reverse Polish Notation calculator
 ============
+(https://img.shields.io/badge/version-1.0.7-green.svg)](https://piotrbartnik.github.io/RPNcalculator/) [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)]
 
 Reverse Polish notation is type of mathematical notation where the operators follow their operands. 
 For example (1+4)*5 in RPN equals to 4 1 + 5 *.
@@ -23,4 +24,4 @@ Layout and features of calculator are borrowed from Casio SL-831 liquid calculat
 That type of calculator had fenature that draws card color and number from 1 to 13. Than players could read their fate from provided guide. 
 
 
-[Live version](https://piotrbartnik.github.io/RPNcalculator/)
+[Live version](/)
