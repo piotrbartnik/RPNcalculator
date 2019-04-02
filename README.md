@@ -1,6 +1,6 @@
 Reverse Polish Notation calculator
 ============
-(https://img.shields.io/badge/version-1.0.7-green.svg)](https://piotrbartnik.github.io/RPNcalculator/) [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)]
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://piotrbartnik.github.io/RPNcalculator/)
 
 Reverse Polish notation is type of mathematical notation where the operators follow their operands. 
 For example (1+4)*5 in RPN equals to 4 1 + 5 *.
