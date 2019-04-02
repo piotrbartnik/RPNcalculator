@@ -12,12 +12,12 @@ For practical use calculator can multiply, divide, add and substract and show re
 
 ## Technologies used
 
-- HTML5
-- Sass
-- ![JavaScript](https://icongr.am/devicon/javascript-original.svg)
-- gulp
-- babel
-- Jest
+- (https://icongr.am/devicon/html5-original-wordmark.svg)
+- (https://icongr.am/devicon/sass-original.svg)
+- (https://icongr.am/devicon/javascript-original.svg)
+- (https://icongr.am/devicon/gulp-plain.svg)
+- (https://icongr.am/devicon/babel-original.svg)
+- (https://cdn-images-1.medium.com/max/1600/1*3whjFY1CJUag-a3abRqyQA.png)
 
 ## Instalation and test
 
