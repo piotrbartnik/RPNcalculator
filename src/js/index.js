@@ -81,6 +81,7 @@ for (var i = 0; i < buttons.length; i++) {
           if (isResult) {
             result = [];
           }
+          isResult = false;
           result.push(buttons[j].dataset.value);
           resultDisplay.innerText = result.join('');
         }
@@ -99,7 +100,6 @@ for (var i = 0; i < buttons.length; i++) {
       if (buttons[j].dataset.value == '=') {
         calculateResult(result);
         rpnDisplay.innerHTML = rpn(rpnReady(result));
-        console.log(rpn(rpnReady(result)));
         result = calculateResult(result);
         if (calculateResult(result).length > 10) {
           resultDisplay.innerText = calculateResult(result).toString().slice(0, 10);
@@ -144,7 +144,6 @@ document.addEventListener('keypress', (e) => {
   if (e.code == "NumpadEnter") {
     calculateResult(result);
     rpnDisplay.innerHTML = rpn(rpnReady(result));
-    console.log(rpn(rpnReady(result)));
     result = calculateResult(result);
     if (calculateResult(result).length > 10) {
       resultDisplay.innerText = calculateResult(result).toString().slice(0, 9);
