@@ -24,12 +24,12 @@ test('misc', () => {
 });
 
 test('rpn', () => {
-  expect(rpnModule.rpn('1+2')).toBe('1 2 +');
-  expect(rpnModule.rpn('1*2')).toBe('1 2 *');
-  expect(rpnModule.rpn('1+2-5')).toBe('1 2 5 - +');
-  expect(rpnModule.rpn('1+2*4')).toBe('1 2 4 * +');
-  expect(rpnModule.rpn('1*2+10')).toBe('1 2 * 10 +');
-  expect(rpnModule.rpn('1/2')).toBe('1 2 /');
-  expect(rpnModule.rpn('1+2/10')).toBe('1 2 10 / +');
-  expect(rpnModule.rpn('1/2*5')).toBe('1 2 / 5 *');
+  expect(rpnModule.rpn(['1','+','2'])).toBe('1 2 +');
+  expect(rpnModule.rpn(['1','*','2'])).toBe('1 2 *');
+  expect(rpnModule.rpn(['1','+','2','-','5'])).toBe('1 2 5 - +');
+  expect(rpnModule.rpn(['1','+','2','*','4'])).toBe('1 2 4 * +');
+  expect(rpnModule.rpn(["1", "*", "2", "+", "10"])).toBe('1 2 * 10 +');
+  expect(rpnModule.rpn(['1','/','2'])).toBe('1 2 /');
+  expect(rpnModule.rpn(['1','+','2','/','10'])).toBe('1 2 10 / +');
+  expect(rpnModule.rpn(['1','/','2','*','5'])).toBe('1 2 / 5 *');
 });
