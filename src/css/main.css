@@ -86,6 +86,8 @@ p {
   color: white;
   font-family: "OEG";
   justify-content: space-between; }
+  .calc__orange p:nth-child(2n) {
+    padding-left: 55px; }
   .calc__orange--type {
     font-size: 5px; }
     .calc__orange--type:nth-of-type(1) {
@@ -110,6 +112,8 @@ p {
     justify-content: space-evenly;
     width: 325px;
     padding: 5px; }
+    .calc__pad--buttons div:first-child {
+      background-color: #00356f; }
   .calc__pad--solarcell {
     display: flex;
     flex-wrap: wrap;

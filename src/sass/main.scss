@@ -113,6 +113,10 @@ p {
     font-family: "OEG";
     justify-content: space-between;
 
+    & p:nth-child(2n) {
+      padding-left: 55px;
+    }
+
     &--type {
       font-size: 5px;
 
@@ -143,6 +147,10 @@ p {
       justify-content: space-evenly;
       width: 325px;
       padding: 5px;
+
+      & div:first-child {
+        background-color: #00356f;
+      }
       
     }
 
