@@ -7,7 +7,7 @@ let rpn = (eq) => {
       nums.push(eq[i])
     }
     if (operands.indexOf(eq[i]) != -1) {			
-			if (eq[i] === "-"  && arrOperands[0] === "*") {
+			if (((eq[i] === "-" || eq[i] === "+")  && arrOperands[0] === "*") || (eq[i] === "*" && arrOperands[0] === "/")) {
 				nums.push(arrOperands[0])
 				arrOperands.splice(0,1)
 			}
