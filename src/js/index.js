@@ -17,7 +17,6 @@ let rpnReady = (array) => {
       rpnReadyArray.push(array[i])
     }
   }
-  console.log(rpnReadyArray.slice(0, -1))
   return rpnReadyArray.slice(0, -1);
 }
 

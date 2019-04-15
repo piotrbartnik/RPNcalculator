@@ -21,7 +21,6 @@ var rpnReady = function rpnReady(array) {
     }
   }
 
-  console.log(rpnReadyArray.slice(0, -1));
   return rpnReadyArray.slice(0, -1);
 };
 
