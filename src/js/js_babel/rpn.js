@@ -6,7 +6,11 @@ var rpn = function rpn(eq) {
   var arrOperands = [];
 
   for (var i = 0; i < eq.length; i++) {
-    if (/[0-9]+/.test(eq[i])) {
+    if (/\d+/.test(eq[i])) {
+      nums.push(eq[i]);
+    }
+
+    if (/\.{1}/.test(eq[i])) {
       nums.push(eq[i]);
     }
 
@@ -20,7 +24,8 @@ var rpn = function rpn(eq) {
     }
   }
 
-  return nums.concat(arrOperands).join(" ");
+  nums = nums.concat(arrOperands).join(" ");
+  return nums.replace(/\s(\.)\s/, '$1');
 };
 
 module.exports = {
