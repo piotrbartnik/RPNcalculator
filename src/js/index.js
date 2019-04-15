@@ -153,7 +153,9 @@ document.addEventListener('keypress', (e) => {
   }
 });
 
-
-module.exports = {
-  calculateResult: calculateResult
+if (typeof module === 'undefined') {
+} else {
+  module.exports = {
+    calculateResult: calculateResult
+  }
 }

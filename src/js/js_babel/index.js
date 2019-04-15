@@ -185,6 +185,9 @@ document.addEventListener('keypress', function (e) {
     resultDisplay.innerText = calculateResult(result);
   }
 });
-module.exports = {
-  calculateResult: calculateResult
-};
+
+if (typeof module === 'undefined') {} else {
+  module.exports = {
+    calculateResult: calculateResult
+  };
+}

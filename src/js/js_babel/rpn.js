@@ -28,6 +28,8 @@ var rpn = function rpn(eq) {
   return nums.replace(/\s(\.)\s/, '$1');
 };
 
-module.exports = {
-  rpn: rpn
-};
+if (typeof module === 'undefined') {} else {
+  module.exports = {
+    rpn: rpn
+  };
+}
